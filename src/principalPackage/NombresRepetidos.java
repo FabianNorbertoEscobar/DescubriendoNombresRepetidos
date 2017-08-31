@@ -73,7 +73,7 @@ public class NombresRepetidos extends EjercicioOIA {
 		
 		for (int i = 0; i < this.buscados; i++) {
 			Entry<Integer, String> nombre = ((TreeMap<Integer,String>) this.repetidos).pollLastEntry();
-			buffer.write(nombre.getKey() + " " + nombre.getValue());
+			buffer.write(nombre.getValue() + " " + nombre.getKey());
 			buffer.newLine();
 		}
 		buffer.close();
