@@ -2,6 +2,7 @@ package principalPackage;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -9,6 +10,20 @@ public class Main {
 
 	public static void main(String[] args) {
 		//generadorCasoFatiga();
+		
+		File entrada = new File("entrada.in");
+		File salida = new File("salida.out");
+		
+		try {
+			NombresRepetidos campamento = new NombresRepetidos(entrada, salida);
+			campamento.resolver();
+		} catch (FileNotFoundException e) {
+			System.out.println("No se pudo levantar el archivo de entrada");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("No se pudo cargar el archivo de salida");
+			e.printStackTrace();
+		}
 	}
 	
 	public static void generadorCasoFatiga() {
